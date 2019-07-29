@@ -9,7 +9,7 @@
 #define GAME_Y 21
 #define GAME_X 80
 #define GAME_BORDER 'X'
-#define GAME_SPEED 200000
+#define GAME_SPEED 7500
 
 
 const char* logo[] =
