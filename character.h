@@ -4,7 +4,6 @@
 #include <stdint.h>
 
 #define CHARACTER_BOOST_DURATION 25
-#define CHARACTER_BOOST_SPEED 150000
 
 typedef enum direction {
   dir_up,

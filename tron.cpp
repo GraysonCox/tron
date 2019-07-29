@@ -9,8 +9,8 @@
 #define GAME_Y 21
 #define GAME_X 80
 #define GAME_BORDER 'X'
-#define GAME_SPEED 7500
-
+#define GAME_TURN_PERIOD 7500
+#define GAME_BOOST_TURN_PERIOD 5000
 
 const char* logo[] =
   {"8888888 8888888888 8 888888888o.      ,o888888o.     8 b.             8",
@@ -345,13 +345,13 @@ int start_game_single_player(character *PC, character *NPC, char map[][GAME_X]) 
     handle_control_computer(NPC, map);
 
     // Update screen
-    if (t % (GAME_SPEED - CHARACTER_BOOST_SPEED * PC->get_is_boosting()) == 0) {
+    if (t % (GAME_TURN_PERIOD - GAME_BOOST_TURN_PERIOD * PC->get_is_boosting()) == 0) {
       if (move_player_return_collision(PC, map)) {
 	NPC->increment_score();
 	break;
       }
     }
-    if (t % (GAME_SPEED - CHARACTER_BOOST_SPEED * NPC->get_is_boosting()) == 0) {
+    if (t % (GAME_TURN_PERIOD - GAME_BOOST_TURN_PERIOD * NPC->get_is_boosting()) == 0) {
       if (move_player_return_collision(NPC, map)) {
 	PC->increment_score();
 	break;
@@ -373,13 +373,13 @@ int start_game_multi_player(character *PC1, character *PC2, char map[][GAME_X]) 
     }
 
     // Update screen
-    if (t % (GAME_SPEED - CHARACTER_BOOST_SPEED * PC1->get_is_boosting()) == 0) {
+    if (t % (GAME_TURN_PERIOD - GAME_BOOST_TURN_PERIOD * PC1->get_is_boosting()) == 0) {
       if (move_player_return_collision(PC1, map)) {
 	PC2->increment_score();
 	break;
       }
     }
-    if (t % (GAME_SPEED - CHARACTER_BOOST_SPEED * PC2->get_is_boosting()) == 0) {
+    if (t % (GAME_TURN_PERIOD - GAME_BOOST_TURN_PERIOD * PC2->get_is_boosting()) == 0) {
       if (move_player_return_collision(PC2, map)) {
 	PC1->increment_score();
 	break;
