@@ -1,0 +1,14 @@
+I made a Tron game, which was one of the suggestions in the assignment description.
+The game ends when a player has won 3 rounds or when ^q is entered.
+
+MAIN MENU CONTROLS:
+  Move cursor - Arrow keys
+  Select option - Space bar
+
+PLAYER 1 CONTROLS:
+  Movement - Arrow keys
+  Boost - '/'
+  
+PLAYER 2 CONTROLS:
+  Movement - wasd
+  Boost - 'e'
